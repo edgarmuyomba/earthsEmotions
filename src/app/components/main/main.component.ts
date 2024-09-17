@@ -13,9 +13,7 @@ export class MainComponent implements OnInit {
 
   selectedCountry: { name: string } | null = null;
 
-  selectedDate: Date = new Date("2024-09-11T14:59:16");
-
-  constructor() { }
+  selectedDate: Date = new Date();
 
   ngOnInit(): void {
     this.countries = [

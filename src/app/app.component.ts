@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Data } from './data';
+import { APIService } from './api.service';
 
 @Component({
   selector: 'app-root',
@@ -9,17 +10,25 @@ import { Data } from './data';
 export class AppComponent {
   title = 'earthsEmotions';
 
-  readonly date = new Date("2024-09-11T14:59:16");
+  readonly date = new Date();
   readonly formattedDate = this.date.toLocaleDateString('en-US', {
-    weekday: 'short',   // "Wed"
-    year: 'numeric',    // "2024"
-    month: 'short',     // "Sep"
-    day: 'numeric'      // "11"
+    weekday: 'short', 
+    year: 'numeric',  
+    month: 'short',   
+    day: 'numeric'    
   });
 
   data: Data = {
     polarity: 0.01,
     country: "Uganda",
     date: this.formattedDate
+  }
+
+  constructor(private apiService: APIService) {
+    this.apiService.polarityNow().subscribe(
+      (data) => {
+        this.data.polarity = data.average_polarity;
+      }
+    )
   }
 }
