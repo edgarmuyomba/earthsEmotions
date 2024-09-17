@@ -1,5 +1,5 @@
 export interface Data {
     polarity: number,
-    country: String,
+    country: string,
     date: Date
 }

@@ -1,5 +1,6 @@
 <div class="navbar">
     <div class="country">
+        <p-dropdown [options]="countries" [(ngModel)]="selectedCountry" optionLabel="name"></p-dropdown>
         {{ data.country }}
     </div>
     <div class="date">
