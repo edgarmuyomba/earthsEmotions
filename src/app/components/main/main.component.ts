@@ -13,12 +13,17 @@ export class MainComponent implements OnInit {
 
   selectedCountry: { name: string } | null = null;
 
+  selectedDate: Date = new Date("2024-09-11T14:59:16");
+
   constructor() { }
 
   ngOnInit(): void {
     this.countries = [
-      { name: "Uganda" }
+      { name: "Uganda" },
+      { name: "Kenya" },
+      { name: "Tanzania" },
     ]
+    this.selectedCountry = this.countries[0]; 
   }
 
 }

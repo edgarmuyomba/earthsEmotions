@@ -1,13 +1,13 @@
 <div class="navbar">
     <div class="country">
         <p-dropdown [options]="countries" [(ngModel)]="selectedCountry" optionLabel="name"></p-dropdown>
-        {{ data.country }}
+        <!-- {{ data.country }} -->
     </div>
     <div class="date">
         {{ data.date }}
     </div>
     <div class="calendar">
-        Calendar
+        <p-calendar [(ngModel)]="selectedDate" dateFormat="dd/mm/yy"></p-calendar>
     </div>
 </div>
 <div class="emotion">

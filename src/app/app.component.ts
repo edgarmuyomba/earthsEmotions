@@ -9,9 +9,17 @@ import { Data } from './data';
 export class AppComponent {
   title = 'earthsEmotions';
 
+  readonly date = new Date("2024-09-11T14:59:16");
+  readonly formattedDate = this.date.toLocaleDateString('en-US', {
+    weekday: 'short',   // "Wed"
+    year: 'numeric',    // "2024"
+    month: 'short',     // "Sep"
+    day: 'numeric'      // "11"
+  });
+
   data: Data = {
     polarity: 0.01,
     country: "Uganda",
-    date: new Date("2024-09-11T14:59:16")
+    date: this.formattedDate
   }
 }
